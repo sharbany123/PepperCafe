@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cracked Pepper Cafe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#F7F3EC;
+color:#1D1D1D;
+overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(247,243,236,0.8);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav h1{
+font-family:'Playfair Display',serif;
+font-size:20px;
+letter-spacing:1px;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#1D1D1D;
+font-size:14px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#4A3428;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:url('https://images.unsplash.com/photo-1600891964092-4316c288032e') center/cover no-repeat;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.45);
+}
+
+.hero-content{
+position:relative;
+color:white;
+max-width:800px;
+padding:20px;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:60px;
+}
+
+.hero p{
+margin-top:15px;
+font-size:16px;
+opacity:0.9;
+}
+
+.btn{
+margin-top:25px;
+display:inline-block;
+padding:12px 24px;
+border-radius:30px;
+border:none;
+cursor:pointer;
+font-size:14px;
+transition:0.3s;
+}
+
+.btn-primary{
+background:#B08D43;
+color:white;
+}
+
+.btn-secondary{
+background:transparent;
+border:1px solid white;
+color:white;
+margin-left:10px;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+/* SECTIONS */
+section{
+padding:100px 10%;
+}
+
+.section-title{
+font-family:'Playfair Display';
+font-size:36px;
+margin-bottom:20px;
+}
+
+.section-sub{
+color:#555;
+max-width:600px;
+line-height:1.6;
+}
+
+/* ABOUT */
+.about{
+display:flex;
+gap:50px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.about img{
+width:45%;
+border-radius:12px;
+}
+
+.about-text{
+flex:1;
+}
+
+/* MENU */
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
+}
+
+.card h3{
+font-family:'Playfair Display';
+margin-bottom:8px;
+}
+
+.card p{
+font-size:13px;
+color:#555;
+}
+
+/* EXPERIENCE */
+.experience{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.exp-box{
+padding:30px;
+background:#fff;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* CHEF */
+.chef{
+display:flex;
+gap:40px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.chef img{
+width:45%;
+border-radius:12px;
+}
+
+/* TESTIMONIAL */
+.testimonial{
+background:#111;
+color:white;
+text-align:center;
+padding:80px 20%;
+}
+
+.testimonial p{
+font-size:18px;
+font-style:italic;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:40px 20px;
+margin-top:50px;
+}
+
+footer p{
+font-size:13px;
+opacity:0.8;
+}
+
+/* ANIMATION */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{font-size:40px;}
+.about img,.chef img{width:100%;}
+nav{padding:15px 20px;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>Cracked Pepper Cafe</h1>
+<div>
+<a href="#about">About</a>
+<a href="#menu">Menu</a>
+<a href="#experience">Experience</a>
+<a href="#chef">Chef</a>
+<a href="#visit">Visit</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<div class="hero-content">
+<h1>The Cracked Pepper Cafe</h1>
+<p>A sensory experience crafted from tradition, passion, and flavor.</p>
+<button class="btn btn-primary">View Menu</button>
+<button class="btn btn-secondary">Our Story</button>
+</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="fade">
+<h2 class="section-title">Our Story</h2>
+<div class="about">
+<img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1">
+<div class="about-text">
+<p class="section-sub">
+Born from childhood journeys searching for the perfect Cuban sandwich, The Cracked Pepper Cafe is built on 30+ years of culinary passion.
+Every recipe carries memory, tradition, and experimentation.
+<br><br>
+Food is not just nourishment—it is connection.
+</p>
+</div>
+</div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="fade">
+<h2 class="section-title">Signature Sandwiches</h2>
+<div class="menu-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+<div class="card-content">
+<h3>Cuban Classic</h3>
+<p>Pressed, warm, and layered with tradition.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d">
+<div class="card-content">
+<h3>Midnight Melt</h3>
+<p>Bold flavors with a slow, smoky finish.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe">
+<div class="card-content">
+<h3>Heritage Roast</h3>
+<p>Comfort wrapped in decades of craft.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1525755662778-989d0524087e">
+<div class="card-content">
+<h3>Garden Fire</h3>
+<p>Fresh, bright, and unexpectedly bold.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="fade">
+<h2 class="section-title">The Experience</h2>
+<div class="experience">
+
+<div class="exp-box">
+<h3>Taste</h3>
+<p>Layers of flavor built to linger.</p>
+</div>
+
+<div class="exp-box">
+<h3>Aroma</h3>
+<p>Warm bread, roasted depth.</p>
+</div>
+
+<div class="exp-box">
+<h3>Texture</h3>
+<p>Crisp, soft, balanced.</p>
+</div>
+
+<div class="exp-box">
+<h3>Memory</h3>
+<p>Every bite tells a story.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CHEF -->
+<section id="chef" class="fade">
+<h2 class="section-title">Chef’s Philosophy</h2>
+<div class="chef">
+<img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d">
+<div>
+<p class="section-sub">
+With over 30 years of culinary experimentation, our chef believes every sandwich is a chance to learn, refine, and connect people through flavor.
+<br><br>
+“Food is craft. Craft is love. Love is memory.”
+</p>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial fade">
+<p>
+“This café feels like a memory I didn’t know I had.”
+</p>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="fade">
+<h2 class="section-title">Visit Us</h2>
+<p class="section-sub">
+Come experience the flavor journey.<br>
+Open daily: 8AM – 10PM<br>
+123 Flavor Street, Culinary City
+</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>Crafted with passion at The Cracked Pepper Cafe</p>
+</footer>
+
+<script>
+// fade animation
+const elements=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+elements.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+el.classList.add('show');
+}
+});
+});
+</script>
+
+</body>
+</html>
